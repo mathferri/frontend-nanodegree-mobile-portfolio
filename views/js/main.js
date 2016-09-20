@@ -440,15 +440,13 @@ var resizePizzas = function(size) {
       }
       
 var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-      var mq = window.matchMedia("(max-width: 500px)");
-      for (var i = 0; i < randomPizzas.length; i++) {
-  if (mq.matches) {
-               newWidth = 100;
-   randomPizzas[i].style.width = newWidth + "%";
- } else {
+      
+      
+  
+     for (var i = 0; i < randomPizzas.length; i++) {
         randomPizzas[i].style.width = newWidth + "%";
       }
-  }}
+  }
 
   changePizzaSizes(size);
 
@@ -531,5 +529,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   updatePositions();
 });
-
-window.addEventListener("resize", resizePizzas);
