@@ -440,16 +440,12 @@ var resizePizzas = function(size) {
       }
       
 var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-      var mq = window.matchMedia("(max-width: 500px)");
+      
       for (var i = 0; i < randomPizzas.length; i++) {
-          if (mq.matches) {
-              newWidth = 100;
-  randomPizzas[i].style.width = newWidth + "%";
-} else {
   
         randomPizzas[i].style.width = newWidth + "%";
       }
-  }}
+  }
 
   changePizzaSizes(size);
 
@@ -520,7 +516,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 24; i++) {
+  for (var i = 0; i < 48; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
@@ -533,4 +529,3 @@ document.addEventListener('DOMContentLoaded', function() {
   updatePositions();
 });
 
-window.addEventListener("resize", resizePizzas);
