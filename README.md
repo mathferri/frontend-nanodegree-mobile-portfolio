@@ -1,8 +1,8 @@
 ## Website Performance Optimization portfolio project
 
-This website was optmized for speed and has two main folders "src" and "dist" which are the production and distribution code for the website, you can access the final version of the online website [by clicking here](https://mathferri.github.io/frontend-nanodegree-mobile-portfolio/).
+This website was optimized for speed and has two main folders "src" and "dist" which are the production and distribution code for the website, you can access the final version of the online website [by clicking here](https://mathferri.github.io/frontend-nanodegree-mobile-portfolio/).
 
-### Optmizations made
+### Optimizations made
 
 #### 1. 60FPS 
 
