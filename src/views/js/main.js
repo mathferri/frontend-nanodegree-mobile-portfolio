@@ -419,8 +419,8 @@ var resizePizzas = function(size) {
 };
 window.performance.mark("mark_start_generating"); // collect timing data
 // This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 // User Timing API again. These measurements tell you how long it took to generate the initial pizzas
@@ -451,17 +451,17 @@ function updatePositions() {
   // Creates an array with all of the basiclefts of the pizzas so it doesn't need to run inside the loop
   var basicLeftArray = [];
   for (var i = 0; i < items.length; i++) {
-      basicLeftArray.push(items[i].basicLeft);
+    basicLeftArray.push(items[i].basicLeft);
   } 
-  // Creates an array to store the phases variables
+  // Creates an array to store the phase's variables
   var phase = [];
   var scrollcounter = (document.body.scrollTop / 1250); 
   for (var i = 0; i < 5; i++) {
-      phase.push(Math.sin(scrollcounter + (i % 5)));
+    phase.push(Math.sin(scrollcounter + (i % 5)));
   }
   // For loop that  updates the position if every background pizza according to scroll position.
   for (var i = 0; i < items.length; i++) {
-      items[i].style.left = basicLeftArray[i] + 100 * (phase[i % 5]) + 'px';
+    items[i].style.left = basicLeftArray[i] + 100 * (phase[i % 5]) + 'px';
   }
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
@@ -476,10 +476,21 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
+  // Defines 8 pizza columns.
   var cols = 8;
+  // Defines the height of the row.
   var s = 256;
-  for (var i = 0; i < 22; i++) {
-    var elem = document.createElement('img');
+  // Defines the screen height.
+  var screenHeight = window.screen.height;
+  // Defines the number of rows.
+  var rows = Math.ceil(screenHeight / s);
+  // Dynamically calculate the number of pizzas needed to fill the screen.
+  var pizzaNumber = rows * cols;
+  // Defines pizza background element variable.
+  var elem;
+  // Loop that creates the background pizzas.
+  for (var i = 0; i < pizzaNumber; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";

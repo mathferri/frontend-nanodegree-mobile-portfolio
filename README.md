@@ -12,7 +12,7 @@ a. Updating changePizzaSizes function to reduce the time to resize pizzas using 
 
 b. Updating updatePositions function to reduce JavaScript and Layout times by getting rid of forced synchronous layouts.
 
-c. Changing the number of background pizzas created from 200 to 22 pizzas.
+c. Changing the number of background pizzas created from 200 by dynamically calculating it according to user screen size.
 
 d. Reduce painting time by creating a layer for the background pizzas. (change made on the style.css file).
 
