@@ -10,18 +10,18 @@ gulp.task("disthtml", function(){
         .pipe(inline({
             base: "src/css", 
             css: cleanCSS,
-            disabledTypes: ['svg', 'img', 'js']
+            disabledTypes: ["svg", "img", "js"]
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest("dist/"));
     gulp.src("src/views/*.html")
         .pipe(inline({
             base: "src/views/css", 
             css: cleanCSS,
-            disabledTypes: ['svg', 'img', 'js']
+            disabledTypes: ["svg", "img", "js"]
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('dist/views'));
+        .pipe(gulp.dest("dist/views"));
 });
 
 gulp.task("scripts", function(){
@@ -34,9 +34,9 @@ gulp.task("scripts", function(){
 });
 
 gulp.task("imagemin", function(){
-    gulp.src('src/img/*')
+    gulp.src("src/img/*")
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'));
+        .pipe(gulp.dest("dist/img"));
     gulp.src("src/views/images/*")
         .pipe(imagemin())
         .pipe(gulp.dest("dist/views/images"));

@@ -1,8 +1,8 @@
 ## Website Performance Optimization portfolio project
 
-This website was optmized for speed and has two main folders "src" and "dist" which are the production and distribution code for the website, you can access the final version of the online website [by clicking here](https://mathferri.github.io/frontend-nanodegree-mobile-portfolio/).
+This website was optimized for speed and has two main folders "src" and "dist" which are the production and distribution code for the website, you can access the final version of the online website [by clicking here](https://mathferri.github.io/frontend-nanodegree-mobile-portfolio/).
 
-### Optmizations made
+### Optimizations made
 
 #### 1. 60FPS 
 
@@ -12,7 +12,7 @@ a. Updating changePizzaSizes function to reduce the time to resize pizzas using 
 
 b. Updating updatePositions function to reduce JavaScript and Layout times by getting rid of forced synchronous layouts.
 
-c. Changing the number of background pizzas created from 200 to 22 pizzas.
+c. Changing the number of background pizzas created from 200 by dynamically calculating it according to user screen size.
 
 d. Reduce painting time by creating a layer for the background pizzas. (change made on the style.css file).
 
